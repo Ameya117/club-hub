@@ -8,8 +8,10 @@ import { Toaster, toast } from "sonner";
 
 const Navbar = (props) => {
   const [userId, setUserId] = useState();
+  const [token,setToken] = useState();
   useEffect(() => {
-    setUserId(localStorage.getItem("userid"));
+    setUserId(localStorage.getItem('userid'));
+    setToken(localStorage.getItem('token'));
   }, []);
   const router = useRouter();
   const [icon, setIcon] = useState("bars");
@@ -31,7 +33,7 @@ const Navbar = (props) => {
     localStorage.removeItem("token");
     toast.success("logged out");
     setTimeout(function () {
-      router.push("/");
+      router.push("/login");
     }, 1000);
   };
 
@@ -53,12 +55,12 @@ const Navbar = (props) => {
             }}
             className="leading-8"
           >
-            ClubHub1
+            ClubHub
           </h1>
         </div>
 
         <div className="text-xl flex">
-          {localStorage.getItem('token')&& (
+          {token && (
           <span
             className="text-3xl my-auto h-fit cursor-pointer"
             // onClick={toggleDropdown}

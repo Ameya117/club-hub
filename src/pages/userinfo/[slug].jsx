@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
-import User from "../../../Models/User";
+import User from "@/Models/User";
 import mongoose from "mongoose";
 
 
 const Userinfo = ({user}) => {
-  const [name, setName] = useState();
-  const [regno, setRegno] = useState();
-  const [desc, setDesc] = useState();
- 
 
   const handleOnSubmit = ()=>{
     
@@ -97,7 +93,6 @@ export async function getServerSideProps(context) {
     await mongoose.connect(process.env.MONGO_URI);
   }
   let user = await User.findOne({ _id: context.query.slug });
-  console.log(user)
   return {
     
     props: {
