@@ -1,11 +1,13 @@
-"use client";
 import React from "react";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/Navbar";
 import { CiFacebook, CiMail, CiMusicNote1 } from "react-icons/ci";
 import { IoMusicalNoteOutline } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { CiInstagram } from "react-icons/ci";
-const StorePage = ({ params: { slug } }) => {
+import mongoose from "mongoose";
+const StorePage = ({club}) => {
+  console.log(club)
+
   const imgs = ["/jcp.png", "/bol.png", "/pet.png", "/prudenta.jpg"];
   const person_imgs = [{
     img:"/person1.jpg",
@@ -55,8 +57,7 @@ const StorePage = ({ params: { slug } }) => {
     },
   ];
 
-  const topic = slug;
-  console.log(topic);
+  const topic = club;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selected, setSelected] = useState(null);
   useEffect(() => {
@@ -263,5 +264,18 @@ const StorePage = ({ params: { slug } }) => {
     </>
   );
 };
+
+export async function getServerSideProps(context) {
+  // if (!mongoose.connections[0].readyState) {
+  //   await mongoose.connect(process.env.MONGO_URI);
+  // }
+  // let user = await User.findOne({ _id: context.query.slug });
+  return {
+    
+    props: {
+      club:context.query.slug
+    }, // will be passed to the page component as props
+  };
+}
 
 export default StorePage;

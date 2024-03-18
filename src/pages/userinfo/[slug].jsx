@@ -97,7 +97,6 @@ export async function getServerSideProps(context) {
     await mongoose.connect(process.env.MONGO_URI);
   }
   let user = await User.findOne({ _id: context.query.slug });
-  console.log(user)
   return {
     
     props: {
