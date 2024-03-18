@@ -1,4 +1,4 @@
-"use client";
+
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,6 +12,8 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
+    regno:"2XAAAYYYY",
+    desc:"NA"
   });
   const router = useRouter();
   const handleOnChange = (event) => {
@@ -34,6 +36,8 @@ const Signup = () => {
         name: credentials.name,
         email: credentials.email,
         password: credentials.password,
+        regno:credentials.regno,
+        desc:credentials.desc
       }),
     });
     const json = await response.json();
