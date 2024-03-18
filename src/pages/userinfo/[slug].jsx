@@ -2,13 +2,46 @@ import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import User from "@/Models/User";
 import mongoose from "mongoose";
+import { useRouter } from "next/router";
+import { Toaster, toast } from "sonner";
 
+const Userinfo = ({ user }) => {
+  const router = useRouter();
+  const [name, setName] = useState(user.name);
+  const [regno, setRegno] = useState(user.regno);
+  const [desc, setDesc] = useState(user.desc);
 
-const Userinfo = ({user}) => {
+  useEffect(()=>{
+if(!localStorage.getItem('token')){
+  router.push('/login')
+}
+  },[])
 
-  const handleOnSubmit = ()=>{
-    
-  }
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
+    await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/updateuserinfo`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        email: user.email,
+        desc: desc,
+        regno: regno,
+        desc: desc,
+      }),
+    });
+    toast.success("Updated information successfully");
+    setTimeout(()=>{
+
+      router.push("/");
+    },2000)
+  };
+
+  const handleOnChangeText = (e) => {
+    setDesc(e.target.value);
+  };
   return (
     <>
       <Navbar />
@@ -30,7 +63,7 @@ const Userinfo = ({user}) => {
               onChange={(e) => {
                 setName(e.target.value);
               }}
-              placeholder={`${user.name}`}
+              value={name}
             />
             <label htmlFor="regno" className="text-blue-400 mt-4">
               Registration Number
@@ -44,7 +77,7 @@ const Userinfo = ({user}) => {
               onChange={(e) => {
                 setRegno(e.target.value);
               }}
-              placeholder={`22BCI1000`}
+              placeholder={`${regno}`}
             />
 
             <label htmlFor="email" className="text-blue-400 mt-4">
@@ -72,7 +105,10 @@ const Userinfo = ({user}) => {
               id="desc"
               cols="30"
               rows="5"
-              className="border border-black rounded-md mb-4"
+              value={desc}
+              onChange={handleOnChangeText}
+              className="border border-black rounded-md mb-4 p-1"
+              required
             ></textarea>
 
             <button
@@ -94,9 +130,8 @@ export async function getServerSideProps(context) {
   }
   let user = await User.findOne({ _id: context.query.slug });
   return {
-    
     props: {
-      user:JSON.parse(JSON.stringify(user))
+      user: JSON.parse(JSON.stringify(user)),
     }, // will be passed to the page component as props
   };
 }

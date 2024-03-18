@@ -10,12 +10,12 @@ const StorePage = ({ club }) => {
   const person_imgs = [
     {
       img: "/person1.jpg",
-      name: "Ishaan",
+      name: "Ameya",
       position: "President",
     },
     {
       img: "/person2.jpg",
-      name: "Saakshi",
+      name: "Ishaan",
       position: "Vice President",
     },
     {
@@ -25,7 +25,7 @@ const StorePage = ({ club }) => {
     },
     {
       img: "/person4.jpg",
-      name: "Ameya",
+      name: "Sidharth",
       position: "Co-Secretary",
     },
   ];

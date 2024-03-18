@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 const Header = () => {
   const router = useRouter();
+  const [token,setToken] = useState();
+  useEffect(()=>{
+    setToken(localStorage.getItem('token'));
+  },[])
   const handleLoginPage = () => [router.push("/login")];
   return (
     <>
@@ -16,12 +20,12 @@ const Header = () => {
         <div className="text-2xl lg:text-4xl tracking-[0.2rem] lg:tracking-[0.4rem]">
           for creativity and innovation
         </div>
-        <button
+        {!token && <button
           className="border-2 bg-black hover:bg-transparent hover:text-black hover:border-black text-white rounded-xl my-4 text-xl py-1 px-10 tracking-[0.1rem]"
           onClick={handleLoginPage}
         >
           Log in
-        </button>
+        </button>}
       </div>
     </>
   );

@@ -8,9 +8,7 @@ const handler = async (req, res) => {
       try {
           const userId = req.body.userId;
           let user = await User.findOne({ _id: userId });
-          console.log(user)
           res.status(200).json({success:true, user:user})
-      
     } catch (e) {
       res.status(400).json({ success: false, error: "User Not Found" });
     }

@@ -3,10 +3,9 @@ import Link from "next/link";
 import { FaUserCircle } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useRouter } from "next/router";
-import { LuLogOut } from "react-icons/lu";
 import { Toaster, toast } from "sonner";
 
-const Navbar = (props) => {
+const Navbar = () => {
   const [userId, setUserId] = useState();
   const [token,setToken] = useState();
   useEffect(() => {
@@ -31,6 +30,7 @@ const Navbar = (props) => {
   const handleLogout = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");
+    localStorage.removeItem("userid");
     toast.success("logged out");
     setTimeout(function () {
       router.push("/login");
@@ -38,8 +38,8 @@ const Navbar = (props) => {
   };
 
   return (
-    <nav className={`sticky top-0 bg-white z-[10]`}>
-      {/* <Toaster richColors position="top-right" duration={2000} /> */}
+    <nav className={`sticky top-0 bg-white z-10`}>
+      <Toaster richColors position="top-right" duration={2000} />
       <div className={`h-16 shadow-md flex flex-row justify-between z-50`}>
         <Link
           href="/"
@@ -55,7 +55,7 @@ const Navbar = (props) => {
             }}
             className="leading-8"
           >
-            <img  className="h-14" src="/clubhub.png" alt="" />
+            <img  className="h-12" src="/clubhub.png" alt="clubhub" />
           </h1>
         </div>
 
@@ -99,7 +99,7 @@ const Navbar = (props) => {
               </ul>
             </div>
           )}
-          <Link href={"/login"} className={`my-auto mx-2`}>
+          <Link href={"/login"} className={`my-auto mx-2 text-2xl`}>
             <FaUserCircle />
           </Link>
         </div>

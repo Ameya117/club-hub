@@ -1,5 +1,5 @@
-import User from "../../../Models/User";
-import connectDb from "../../../middleware/mongoose";
+import User from "@/Models/User";
+import connectDb from "@/middleware/mongoose";
 var CryptoJS = require("crypto-js");
 var jwt = require("jsonwebtoken");
 
