@@ -77,7 +77,7 @@ if(!localStorage.getItem('token')){
               onChange={(e) => {
                 setRegno(e.target.value);
               }}
-              placeholder={`${regno}`}
+              value={regno}
             />
 
             <label htmlFor="email" className="text-blue-400 mt-4">
