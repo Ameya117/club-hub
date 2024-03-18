@@ -9,7 +9,7 @@ const PastEvents = () => {
   return (
     <div className="mx-5 mb-8 mt-10">
       <div className="flex justify-between">
-        <div className="text-3xl m-5 text-black font-semibold  z-50 ">
+        <div className="text-3xl m-5 text-black font-semibold">
           Past Events
         </div>
         <div
