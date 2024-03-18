@@ -28,8 +28,7 @@ const Navbar = (props) => {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    // localStorage.removeItem("token");
-    setToken();
+    localStorage.removeItem("token");
     toast.success("logged out");
     setTimeout(function () {
       router.push("/");
@@ -52,13 +51,14 @@ const Navbar = (props) => {
             onClick={() => {
               router.push("/");
             }}
+            className="leading-8"
           >
-            ClubHub
+            ClubHub1
           </h1>
         </div>
 
         <div className="text-xl flex">
-          {/* {token && ( */}
+          {localStorage.getItem('token')&& (
           <span
             className="text-3xl my-auto h-fit cursor-pointer"
             // onClick={toggleDropdown}
@@ -69,8 +69,8 @@ const Navbar = (props) => {
               }}
             />
           </span>
-          {/* )} */}
-          {dropdown && ( //token
+           )} 
+          {dropdown && localStorage.getItem('token') && ( 
             <div
               onMouseOver={() => {
                 setDropdown(true);

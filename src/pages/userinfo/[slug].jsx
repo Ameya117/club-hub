@@ -29,7 +29,7 @@ const Userinfo = ({user}) => {
               type="text"
               id="name"
               name="name"
-              value={name}
+              // value={name}
               className="border border-black px-2 py-1 rounded-sm "
               onChange={(e) => {
                 setName(e.target.value);
@@ -43,14 +43,13 @@ const Userinfo = ({user}) => {
               type="text"
               id="regno"
               name="regno"
-              value={regno}
+              // value={regno}
               className="border border-black px-2 py-1 rounded-sm"
               onChange={(e) => {
                 setRegno(e.target.value);
               }}
               placeholder={`22BCI1000`}
             />
-            {regno}
 
             <label htmlFor="email" className="text-blue-400 mt-4">
               Email
@@ -63,7 +62,7 @@ const Userinfo = ({user}) => {
               onChange={(e) => {
                 setName(e.target.value);
               }}
-              value={`Email@vitstudent.ac.in`}
+              value={`${user.email}`}
               disabled
               readOnly
             />
