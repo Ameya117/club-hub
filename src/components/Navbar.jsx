@@ -40,7 +40,7 @@ const Navbar = (props) => {
   return (
     <nav className={`sticky top-0 bg-white z-[10]`}>
       {/* <Toaster richColors position="top-right" duration={2000} /> */}
-      <div className={`h-16 shadow-md flex flex-row justify-between z-[10]`}>
+      <div className={`h-16 shadow-md flex flex-row justify-between z-50`}>
         <Link
           href="/"
           className="my-auto hover:cursor-pointer ml-4 relative h-12"
@@ -55,7 +55,7 @@ const Navbar = (props) => {
             }}
             className="leading-8"
           >
-            ClubHub
+            <img  className="h-14" src="/clubhub.png" alt="" />
           </h1>
         </div>
 
