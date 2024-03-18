@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
-import User from "../../../Models/User";
+import User from "@/Models/User";
 import mongoose from "mongoose";
 
 
 const Userinfo = ({user}) => {
-  const [name, setName] = useState();
-  const [regno, setRegno] = useState();
-  const [desc, setDesc] = useState();
- 
 
   const handleOnSubmit = ()=>{
     
