@@ -58,7 +58,6 @@ if(!localStorage.getItem('token')){
               type="text"
               id="name"
               name="name"
-              // value={name}
               className="border border-black px-2 py-1 rounded-sm "
               onChange={(e) => {
                 setName(e.target.value);
@@ -72,7 +71,6 @@ if(!localStorage.getItem('token')){
               type="text"
               id="regno"
               name="regno"
-              // value={regno}
               className="border border-black px-2 py-1 rounded-sm"
               onChange={(e) => {
                 setRegno(e.target.value);

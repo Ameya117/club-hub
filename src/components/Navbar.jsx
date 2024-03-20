@@ -7,10 +7,10 @@ import { Toaster, toast } from "sonner";
 
 const Navbar = () => {
   const [userId, setUserId] = useState();
-  const [token,setToken] = useState();
+  const [token, setToken] = useState();
   useEffect(() => {
-    setUserId(localStorage.getItem('userid'));
-    setToken(localStorage.getItem('token'));
+    setUserId(localStorage.getItem("userid"));
+    setToken(localStorage.getItem("token"));
   }, []);
   const router = useRouter();
   const [icon, setIcon] = useState("bars");
@@ -55,24 +55,24 @@ const Navbar = () => {
             }}
             className="leading-8"
           >
-            <img  className="h-12" src="/clubhub.png" alt="clubhub" />
+            <img className="h-8 md:h-12" src="/clubhub.png" alt="clubhub" />
           </h1>
         </div>
 
         <div className="text-xl flex">
           {token && (
-          <span
-            className="text-3xl my-auto h-fit cursor-pointer"
-            // onClick={toggleDropdown}
-          >
-            <RiArrowDropDownLine
-              onMouseOver={() => {
-                setDropdown(true);
-              }}
-            />
-          </span>
-           )} 
-          {dropdown && localStorage.getItem('token') && ( 
+            <span
+              className="text-3xl my-auto h-fit cursor-pointer"
+              // onClick={toggleDropdown}
+            >
+              <RiArrowDropDownLine
+                onMouseOver={() => {
+                  setDropdown(true);
+                }}
+              />
+            </span>
+          )}
+          {dropdown && localStorage.getItem("token") && (
             <div
               onMouseOver={() => {
                 setDropdown(true);
