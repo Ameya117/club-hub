@@ -1,4 +1,3 @@
-
 import { Parallax } from "react-scroll-parallax";
 import React from "react";
 
@@ -6,14 +5,14 @@ const About = () => {
   return (
     <>
       <div className="my-10 lg:my-48">
-        <Parallax speed={-12}>
+        <Parallax speed={-15}>
           <div className="justify-between hidden lg:flex lg:flex-row lg:justify-between h-[20vh]">
             <img
-              className="w-[30vw] h-[55vh] object-cover mt-48 -z-10 absolute left-4 "
+              className="w-[30vw] h-[55vh] object-cover mt-48 -z-10 absolute left-4 object-bottom"
               src="/pic1.jpg"
             />
             <img
-              className="w-[30vw] h-[55vh] object-cover ml-auto -z-10 absolute right-4"
+              className="w-[30vw] h-[55vh] object-cover ml-auto -z-10 absolute right-4 object-top"
               src="/pic2.jpg"
             />
           </div>

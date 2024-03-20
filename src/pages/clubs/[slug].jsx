@@ -176,11 +176,11 @@ const StorePage = ({ club }) => {
                 </div>
               </div>
             </div>
-            <div className="font-light text-3xl text-center my-5 font-serif tracking-wider   opacity-70">
+            <div className="font-light text-3xl text-center my-5 font-serif tracking-wider opacity-70">
               FLAGSHIP EVENTS
             </div>
 
-            <div className="md:flex-row flex flex-col  gap-9">
+            <div className="md:flex-row flex flex-col gap-9">
               <div className="p-3 h- md:w-1/2 w-[90vw] mx-6  bg-green-950 text-white border-4 border-teal-500 rounded-xl flex flex-col ">
                 <div className="items-center mb-4 text-3xl text-center font-serif ">
                   BeatBox Battle

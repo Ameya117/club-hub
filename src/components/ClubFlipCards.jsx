@@ -12,28 +12,6 @@ const ClubFlipCards = () => {
   const [isFlipped5, setIsFlipped5] = useState(false);
   const [isFlipped6, setIsFlipped6] = useState(false);
 
-  const handleClick1 = () => {
-    setIsFlipped1((prevState) => !prevState);
-  };
-  const handleClick2 = () => {
-    setIsFlipped2((prevState) => !prevState);
-  };
-  const handleClick3 = () => {
-    setIsFlipped3((prevState) => !prevState);
-  };
-
-  const handleClick4 = () => {
-    setIsFlipped4((prevState) => !prevState);
-  };
-
-  const handleClick5 = () => {
-    setIsFlipped5((prevState) => !prevState);
-  };
-
-  const handleClick6 = () => {
-    setIsFlipped6((prevState) => !prevState);
-  };
-
   const fadeInAnimationVariants = {
     initial: {
       opacity: 0,
@@ -71,12 +49,16 @@ const ClubFlipCards = () => {
             once: true,
           }}
           custom={1}
+          onMouseEnter={() => {
+            setIsFlipped1(true);
+          }}
+          onMouseLeave={() => {
+            setIsFlipped1(false);
+          }}
+          className="w-fit mx-auto"
         >
           <ReactCardFlip isFlipped={isFlipped1} flipDirection="verical">
-            <div
-              onClick={handleClick1}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col  mx-auto border-2 rounded-2xl relative"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col  mx-auto border-2 rounded-2xl relative">
               <img
                 className="absolute bottom-0 h-[60%] w-full object-cover mx-auto"
                 src="/cultural.png"
@@ -85,12 +67,8 @@ const ClubFlipCards = () => {
               <h1 className="p-2 text-2xl font-semibold text-center mt-[10%]">
                 Cultural
               </h1>
-              <button>Tap to Flip</button>
             </div>
-            <div
-              onClick={handleClick1}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2 rounded-2xl"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2 rounded-2xl">
               <div className="p-2 font-extralight ">
                 <li>
                   <Link className="link" href="/clubs/music">
@@ -125,12 +103,16 @@ const ClubFlipCards = () => {
             once: true,
           }}
           custom={1}
+          onMouseEnter={() => {
+            setIsFlipped2(true);
+          }}
+          onMouseLeave={() => {
+            setIsFlipped2(false);
+          }}
+          className="w-fit mx-auto"
         >
           <ReactCardFlip isFlipped={isFlipped2} flipDirection="vertical">
-            <div
-              onClick={handleClick2}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col  mx-auto border-2 rounded-2xl relative"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col  mx-auto border-2 rounded-2xl relative ">
               <img
                 className="absolute bottom-0 h-[65%] w-full object-cover object-top mx-auto"
                 src="/technical.png"
@@ -139,12 +121,8 @@ const ClubFlipCards = () => {
               <h1 className="p-2 text-2xl font-semibold text-center mt-[10%]">
                 Technical
               </h1>
-              <button onClick={handleClick2}>Tap to Flip</button>
             </div>
-            <div
-              onClick={handleClick2}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2 rounded-2xl"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2 rounded-2xl">
               <div className="p-2 font-extralight ">
                 <li>
                   <Link className="link" href="#">
@@ -179,12 +157,16 @@ const ClubFlipCards = () => {
             once: true,
           }}
           custom={1}
+          onMouseEnter={() => {
+            setIsFlipped3(true);
+          }}
+          onMouseLeave={() => {
+            setIsFlipped3(false);
+          }}
+          className="w-fit mx-auto"
         >
           <ReactCardFlip isFlipped={isFlipped3} flipDirection="vertical">
-            <div
-              onClick={handleClick3}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col mx-auto border-2 rounded-2xl relative"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col mx-auto border-2 rounded-2xl relative">
               <img
                 className="absolute bottom-0 h-[60%] w-full object-cover object-top mx-auto"
                 src="/language.png"
@@ -193,12 +175,8 @@ const ClubFlipCards = () => {
               <h1 className="p-2 text-2xl font-semibold text-center mt-[10%]">
                 Literary and Language
               </h1>
-              <button>Tap to Flip</button>
             </div>
-            <div
-              onClick={handleClick3}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2 rounded-2xl"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2 rounded-2xl">
               <div className="p-2 font-extralight ">
                 <li>
                   <Link className="link" href="#">
@@ -223,12 +201,16 @@ const ClubFlipCards = () => {
             once: true,
           }}
           custom={2}
+          onMouseEnter={() => {
+            setIsFlipped4(true);
+          }}
+          onMouseLeave={() => {
+            setIsFlipped4(false);
+          }}
+          className="w-fit mx-auto"
         >
           <ReactCardFlip isFlipped={isFlipped4} flipDirection="vertical">
-            <div
-              onClick={handleClick4}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col  mx-auto border-2 rounded-2xl relative"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col  mx-auto border-2 rounded-2xl relative">
               <img
                 className="absolute bottom-0 h-[60%] w-full object-cover mx-auto"
                 src="/sports.png"
@@ -237,12 +219,8 @@ const ClubFlipCards = () => {
               <h1 className="p-2 text-2xl font-semibold text-center mt-[10%]">
                 Sports & Fitness
               </h1>
-              <button>Tap to Flip</button>
             </div>
-            <div
-              onClick={handleClick4}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2 rounded-2xl"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2 rounded-2xl">
               <div className="p-2 font-extralight ">
                 <li>
                   <Link className="link" href="#">
@@ -267,12 +245,16 @@ const ClubFlipCards = () => {
             once: true,
           }}
           custom={2}
+          onMouseEnter={() => {
+            setIsFlipped5(true);
+          }}
+          onMouseLeave={() => {
+            setIsFlipped5(false);
+          }}
+          className="w-fit mx-auto"
         >
           <ReactCardFlip isFlipped={isFlipped5} flipDirection="vertical">
-            <div
-              onClick={handleClick5}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col  mx-auto border-2 rounded-2xl relative"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col  mx-auto border-2 rounded-2xl relative">
               <img
                 className="absolute bottom-0 h-[55%] w-full object-cover object-top mx-auto"
                 src="/social.png"
@@ -281,12 +263,8 @@ const ClubFlipCards = () => {
               <h1 className="p-2 text-2xl font-semibold text-center mt-[10%]">
                 Social and Community Services
               </h1>
-              <button onClick={handleClick5}>Tap to Flip</button>
             </div>
-            <div
-              onClick={handleClick5}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2 rounded-2xl"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2 rounded-2xl">
               <div className="p-2 font-extralight ">
                 <li>
                   <Link className="link" href="#">
@@ -321,12 +299,16 @@ const ClubFlipCards = () => {
             once: true,
           }}
           custom={2}
+          onMouseEnter={() => {
+            setIsFlipped6(true);
+          }}
+          onMouseLeave={() => {
+            setIsFlipped6(false);
+          }}
+          className="w-fit mx-auto"
         >
           <ReactCardFlip isFlipped={isFlipped6} flipDirection="vertical">
-            <div
-              onClick={handleClick6}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col  mx-auto border-2 rounded-2xl relative"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col  mx-auto border-2 rounded-2xl relative">
               <img
                 className="absolute bottom-0 h-[50%] w-full object-cover object-top mx-auto"
                 src="/business.png"
@@ -335,12 +317,8 @@ const ClubFlipCards = () => {
               <h1 className="p-2 text-2xl font-semibold text-center mt-[10%]">
                 Entrepreneurship and Business
               </h1>
-              <button onClick={handleClick6}>Tap to Flip</button>
             </div>
-            <div
-              onClick={handleClick6}
-              className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2  rounded-2xl"
-            >
+            <div className="h-[20rem] w-[20rem] bg-gray-100 flex flex-col justify-center items-center mx-auto border-2  rounded-2xl">
               <div className="p-2 font-extralight ">
                 <li>
                   <Link className="link" href="#">
